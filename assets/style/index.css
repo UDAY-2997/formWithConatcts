@@ -16,6 +16,10 @@ h1 {
   margin-bottom: 1rem;
 }
 
+#form-contact {
+  margin-top: 3rem;
+}
+
 #contact-form {
   display: flex;
   justify-content: center;
