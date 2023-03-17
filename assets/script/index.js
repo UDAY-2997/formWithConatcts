@@ -1,5 +1,11 @@
 "use strict";
 
+const form = document.querySelector("#contact-form");
+const contactDetails = document.querySelector("#contact-details");
+const contacts = document.querySelector("#contacts");
+const contactsInfo = [];
+const errorMessage = document.querySelector("#error-message");
+
 class Contact {
   constructor(name, city, email) {
     this._name = name;
@@ -20,12 +26,6 @@ class Contact {
   }
 }
 
-const form = document.querySelector("#contact-form");
-const contactDetails = document.querySelector("#contact-details");
-const contacts = document.querySelector("#contacts");
-const contactsInfo = [];
-const errorMessage = document.querySelector("#error-message");
-
 function validateInput(input) {
   const values = input.split(", ").map((value) => value.trim());
   if (values.length !== 3) {
@@ -44,9 +44,6 @@ function validateInput(input) {
   }
   if (!emailRegex.test(email)) {
     return "Please enter a valid email address (e.g. example@email.com)";
-  }
-  if (contactsInfo.length >= 9) {
-    return "You have reached the maximum number of contacts";
   }
   return "";
 }
@@ -73,16 +70,16 @@ form.addEventListener("submit", (event) => {
 function listContacts() {
   contacts.innerHTML = "";
   const count = document.createElement("button");
-  count.textContent = `Number of contacts: ${contactsInfo.length}`;
+  count.innerHTML = `<strong>Number of contacts:</strong> ${contactsInfo.length}`;
   contacts.appendChild(count);
   contactsInfo.forEach((contact) => {
     const div = document.createElement("div");
     const name = document.createElement("p");
-    name.textContent = `Name: ${contact.name}`;
+    name.innerHTML = `<strong>Name:</strong> ${contact.name}`;
     const city = document.createElement("p");
-    city.textContent = `City: ${contact.city}`;
+    city.innerHTML = `<strong>City:</strong> ${contact.city}`;
     const email = document.createElement("p");
-    email.textContent = `Email: ${contact.email}`;
+    email.innerHTML = `<strong>Email:</strong> ${contact.email}`;
     div.appendChild(name);
     div.appendChild(city);
     div.appendChild(email);
