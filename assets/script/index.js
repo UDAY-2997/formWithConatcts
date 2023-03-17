@@ -6,6 +6,7 @@ const contacts = document.querySelector("#contacts");
 const contactsInfo = [];
 const errorMessage = document.querySelector("#error-message");
 
+// class created for the inputs
 class Contact {
   constructor(name, city, email) {
     this._name = name;
@@ -26,6 +27,7 @@ class Contact {
   }
 }
 
+// function for validate the input in the form
 function validateInput(input) {
   const values = input.split(", ").map((value) => value.trim());
   if (values.length !== 3) {
@@ -48,6 +50,7 @@ function validateInput(input) {
   return "";
 }
 
+// funtion for adding and picking the inputs seperated at comma
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const inputValue = contactDetails.value;
@@ -67,6 +70,7 @@ form.addEventListener("submit", (event) => {
   form.reset();
 });
 
+// function for pushing the inputs to a new storing div
 function listContacts() {
   contacts.innerHTML = "";
   const count = document.createElement("button");
