@@ -88,7 +88,6 @@ div {
   text-align: left;
   border: 1px solid #009d5d;
   border-radius: 5px;
-  transition: all 1s ease-out;
 }
 
 div:hover {
