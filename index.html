@@ -11,12 +11,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <link rel="shortcut icon" href="./assets/images/logo.png" media="all">
   <link rel="stylesheet" href="./assets/style/index.css" media="all">
   <script src="./assets/script/index.js" defer></script>
 </head>
 
 <body>
   <main>
+    <section id="form-contact" class="container">
+      <h1>My contacts</h1>
+      <form id="contact-form">
+        <input type="text" id="contact-details" name="contact-details" placeholder="Name, City, e-mail" required>
+        <input type="submit" id="sumit-here" value="Add Contact">
+
+      </form>
+      <p id="error-message"></p>
+
+    </section>
+    <section id="contact-info">
+      <div id="contacts"></div>
+    </section>
+
 
   </main>
 </body>
